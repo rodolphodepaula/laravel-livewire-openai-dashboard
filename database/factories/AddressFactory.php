@@ -18,7 +18,7 @@ class AddressFactory extends Factory
     {
         return [
             'city' => fake()->city(),
-            'state' => fake()->stateAddr()
+            'state' => fake()->stateAbbr()
         ];
     }
 }
