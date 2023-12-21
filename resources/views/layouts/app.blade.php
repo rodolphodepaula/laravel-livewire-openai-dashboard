@@ -8,15 +8,29 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
+
+        @stack('customer-scripts')
     </head>
     <body class="min-h-screen">
-        <div>
-            <x-side-bar />
+        <div x-data="{ menuVisibility: false }">
+            <x-side-bar></x-side-bar>
+
+            <div class="flex flex-col md:pl-64">
+                <x-navigation/>
+
+                <main class="flex-1">
+                    <div class="py-6">
+                        {{ $slot }}
+                    </div>
+                </main>
+            </div>
         </div>
+
+        @livewireScripts
     </body>
 </html>

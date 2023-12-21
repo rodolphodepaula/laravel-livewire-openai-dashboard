@@ -60,7 +60,7 @@
 <div class="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
     <div class="flex min-h-0 flex-1 flex-col bg-gray-800">
 
-        <x-logo/>
+        <x-logo />
 
         <div class="flex flex-1 flex-col overflow-y-auto">
             <x-side-bar-items />
